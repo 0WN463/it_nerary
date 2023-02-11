@@ -1,0 +1,55 @@
+
+#map {
+    width: 800px;
+    height: 800px;
+    border: thin solid black;
+}
+#itinerary {
+    display: flex;
+    gap: 1em;
+}
+#directionsPanel {
+    width: 25em;
+}
+
+#timePanel {
+    height: 700px;
+}
+
+#timeline {
+    position: relative;
+    height: 100%;
+}
+
+.time-block {
+    position: absolute;
+    background: blue;
+    width:20em;
+    border-radius: 0.3em;
+}
+.time-block[data-line]:hover:before { 
+    content: attr(data-line); 
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    transform: translate(110%, 0%);
+}
+
+.time-block > .start {
+    position: absolute;
+    top: 0;
+    left 0;
+}
+
+.time-block > .end {
+    position: absolute;
+    bottom: 0;
+    left 0;
+}
+
+.time-block > .event {
+    position: absolute;
+    right: 1em;
+    top: 50%; 
+}

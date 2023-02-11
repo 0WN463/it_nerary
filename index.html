@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>IT-nerary</title>
+	<script src="https://maps.googleapis.com/maps/api/js?key=API_KEY" defer></script>
+	<script src="js-yaml.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+	<h1>IT-nerary</h1>
+	<div id="itinerary">
+	    <div id="map"> </div>
+	    <div id="directionsPanel"> </div>
+	    <div id="timePanel">
+		<h3 id="date">
+		</h3>
+		<div id="timeline">
+		</div>
+	    </div>
+	</div>
+	<input id="file" type="file" />
+	<button id="button"> Submit </button>
+	<script src="./index.js"></script>
+	<template>
+	    <div class="time-block">
+		<div class="start"> </div>
+		<div class="end"> </div>
+		<div class="event">
+		</div>
+	    </div>
+	</template>
+    </body>
+</html>
