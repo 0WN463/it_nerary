@@ -210,6 +210,41 @@ async function initMap(data) {
 	    day: "numeric",
 	},
     ) + " " + data.ianaTimeZone
+
+
+  const download_csv = (places, placeTimes, travelTimes) => {
+	const headers = ["Subject", "Start Date", "Start Time", "End Time", "Description"]
+	const placeRows = placeTimes.map((p, i) => ([
+		places[i].name,
+		p.start.toLocaleDateString({locale:"en-US"}),
+		p.start.toLocaleTimeString("en-US", {timeZone: data.ianaTimeZone}),
+		p.end.toLocaleTimeString("en-US", {timeZone: data.ianaTimeZone}),
+		places[i].events?.join(';') ?? '',
+	]))
+	const travelRows = travelTimes.map((t, i) => {
+		const p = places[i]
+		const p2 = places[i+1]
+		const f = place => `${place.loc.lat}%2C${place.loc.lng}`
+		return [
+			`Travel from ${p.name} to ${p2.name}`,
+			t.start.toLocaleDateString({locale:"en-US"}),
+			t.start.toLocaleTimeString("en-US", {timeZone: data.ianaTimeZone}),
+			t.end.toLocaleTimeString("en-US", {timeZone: data.ianaTimeZone}),
+			`https://www.google.com/maps/dir/?api=1&origin=${f(p)}&destination=${f(p2)}&travelmode=transit`
+		]})
+	
+	const csv = [headers, ...placeRows, ...travelRows].join('\n')
+        const hiddenElement = document.createElement('a');
+
+        hiddenElement.href = 'data:attachment/text,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'myFile.csv';
+        hiddenElement.click();
+  }
+  
+  document.getElementById('csv').onclick = () => {
+    download_csv(places, placeTimes, travelTimes)
+  }
 }
 
 async function calcRoute(service, start, end, startTime) {
