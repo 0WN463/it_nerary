@@ -1,0 +1,95 @@
+ # to display times
+ianaTimeZone: Asia/Tokyo
+start: 
+  # DD/MM/YYYY
+  date: 20/07/2023
+  # HH:mm
+  time: 07:00
+  # HH:mm
+  timeZone: +09:00
+  name: Toshima City AirBnB
+  loc:
+    lat: 35.7263
+    lng: 139.7154
+itinerary:
+- travel:
+    duration: 90
+
+- place:
+    name: Odawara JR Station
+    loc:
+      lat: 35.256611337447495
+      lng: 139.1553502826661
+    duration: 30
+    events:
+      - rent car
+- place:
+    name: Hakone Open Air Museum
+    loc:
+      lat: 35.24525075768015 
+      lng: 139.05144743310004
+    duration: 60
+- place:
+    name: Cu-mo Hakone
+    loc:
+      lat: 35.247091676866305
+      lng: 139.03545683912762
+    duration: 30
+    events:
+      - soak free footpath with views
+- place:
+    name: Togendai Port Parking
+    loc:
+      lat: 35.23837784647523
+      lng: 138.99435549944045
+    duration: 15
+    events:
+      - park car here
+- place:
+    name: Take Hakone Pirate Ship to Motohakone Port
+    loc:
+      lat: 35.20096568250599
+      lng: 139.03055605859396
+    duration: 40
+    events:
+      - ship timing at 10.30am and 11.40am
+
+- travel:
+    duration: 1
+
+- place:
+    name: Ashinoko Teahouse
+    loc:
+      lat: 35.20166980987378
+      lng: 139.03110987113547
+    duration: 60
+    events:
+      - Lunch
+
+- travel:
+    duration: 15
+
+- place:
+    name: Hakone Shrine
+    loc:
+      lat: 35.20504302384117
+      lng: 139.02538561105797
+    duration: 40
+
+- travel:
+    duration: 40
+
+- place:
+    name: Gotemba Premium Outlet
+    loc:
+      lat: 35.30696891141022
+      lng: 138.96213297101974
+    duration: 180
+    events:
+      - shopping
+      - dinner
+- place:
+    name: Gotemba AirBnB
+    loc:
+      lat: 35.3030512088
+      lng: 138.963026599
